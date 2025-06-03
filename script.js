@@ -166,4 +166,91 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // Theme selector dropdown toggle
+  const themeIcon = document.querySelector(".theme-icon");
+  const themeDropdown = document.querySelector(".theme-dropdown");
+
+  if (themeIcon && themeDropdown) {
+    themeIcon.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent the click from closing the dropdown immediately
+      themeDropdown.classList.toggle("visible");
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!themeDropdown.contains(e.target) && e.target !== themeIcon) {
+        themeDropdown.classList.remove("visible");
+      }
+    });
+
+    // Apply theme logic here later
+    themeDropdown.addEventListener("click", (e) => {
+      const themeItem = e.target.closest("li[data-theme]");
+      if (themeItem) {
+        const themeName = themeItem.dataset.theme;
+        applyTheme(themeName); // Call the function to apply the theme
+        themeDropdown.classList.remove("visible"); // Close dropdown after selection
+      }
+    });
+  }
+
+  // Function to apply themes
+  function applyTheme(themeName) {
+    const root = document.documentElement;
+    let themePrefix = "";
+
+    if (themeName !== "auto") {
+      themePrefix = themeName + "-";
+    }
+
+    // Define a map of standard variables to theme-specific variables
+    const themeVariables = [
+      "primary-color",
+      "secondary-color",
+      "accent-color",
+      "accent-light",
+      "text-color",
+      "light-text",
+      "background",
+      "light-background",
+      "box-background",
+      "border-color",
+      "shadow",
+      "hero-background",
+    ];
+
+    themeVariables.forEach((variable) => {
+      const cssVar = `--theme-${variable}`;
+      const themeVar = `--${themePrefix}${variable}`;
+      const value = getComputedStyle(root).getPropertyValue(themeVar).trim();
+
+      if (value) {
+        root.style.setProperty(cssVar, value);
+      } else if (themeName !== "auto") {
+        // Fallback to default variables if theme-specific variable is not found for a non-auto theme
+        const defaultVar = `--${variable}`;
+        const defaultValue = getComputedStyle(root)
+          .getPropertyValue(defaultVar)
+          .trim();
+        root.style.setProperty(cssVar, defaultValue);
+      } else {
+        // For 'auto' theme or if no specific theme value is found, revert to original default
+        root.style.removeProperty(cssVar); // Remove the --theme- variable to use the original one
+      }
+    });
+
+    // Save selected theme to localStorage
+    localStorage.setItem("selectedTheme", themeName);
+  }
+
+  // Apply saved theme on page load
+  const savedTheme = localStorage.getItem("selectedTheme");
+  // Check if savedTheme exists and is not null/undefined
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else {
+    // Apply default theme (or auto) if no theme is saved
+    applyTheme("auto");
+  }
 });
