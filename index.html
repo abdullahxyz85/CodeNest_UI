@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeNest – Cloud Collaborative IDE</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <span
+        ><i class="fas fa-bolt"></i> New: AI Assistant now supports natural
+        language-to-code!
+        <a href="#" class="announcement-link">Learn More →</a></span
+      >
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <div class="logo">
+          <i class="fas fa-code"></i>
+          <span>CodeNest</span>
+        </div>
+        <div class="nav-links">
+          <a href="#" class="home-link">Home</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#use-cases">Use Cases</a>
+          <a href="#newsletter" class="cta-button">Get Started</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <canvas id="hero-bg"></canvas>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1>
+            Empower Your Team with <span class="highlight">CodeNest</span>
+          </h1>
+          <p class="hero-desc">
+            Next-generation cloud IDE for real-time, AI-powered team coding.<br />
+            Edit together, chat, share, and build full-stack projects—right in
+            your browser.
+          </p>
+          <a href="#" class="primary-button hero-cta"
+            ><i class="fas fa-rocket"></i> Get Started Now</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-row">
+          <div class="feature-card">
+            <i class="fas fa-users"></i>
+            <h3>Real-Time Collaboration</h3>
+            <p>
+              Edit code together, live. See your teammates' changes instantly
+              and work as if you're in the same room, no matter where you are.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Live multi-user
+                editing
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Instant code
+                sync
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-comments"></i>
+            <h3>Chat & Voice</h3>
+            <p>
+              Communicate instantly with built-in chat and voice channels.
+              Discuss code, share ideas, and solve problems without leaving your
+              IDE.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Real-time chat
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Voice channels
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-link"></i>
+            <h3>Secure Sharing</h3>
+            <p>
+              Share your projects with secure, permission-based links. Control
+              who can view, edit, or comment on your code in real time.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i>
+                Permission-based access
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Shareable
+                project links
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-code"></i>
+            <h3>Multi-Language</h3>
+            <p>
+              Work in your favorite languages—JavaScript, Python, Java, C++, and
+              more. Switch languages and frameworks with ease.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> JavaScript,
+                Python, Java, C++
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Easy language
+                switching
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-terminal"></i>
+            <h3>Shared Terminal</h3>
+            <p>
+              Collaborate in a live terminal session. Run commands, debug, and
+              deploy together—right from your browser.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Live terminal
+                sharing
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Team debugging
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-folder-open"></i>
+            <h3>File Management</h3>
+            <p>
+              Organize, upload, and manage all your project files in one place.
+              Drag-and-drop support and versioned file history included.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Drag-and-drop
+                upload
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> File version
+                history
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-edit"></i>
+            <h3>Monaco Editor</h3>
+            <p>
+              Enjoy a powerful, familiar code editor with syntax highlighting,
+              IntelliSense, and customizable layouts. Monaco Editor brings the
+              experience of VS Code to your browser for seamless development.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Syntax
+                highlighting
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> IntelliSense
+                support
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-robot"></i>
+            <h3>AI Assistant</h3>
+            <p>
+              Get intelligent code autocompletion, debugging help, natural
+              language-to-code, and live code explanations—right as you type.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Code
+                autocompletion
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Live code
+                explanations
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Instant Preview</h3>
+            <p>
+              See your changes live as you code. Instantly preview web apps and
+              UI updates without leaving the editor.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Live web
+                preview
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Instant UI
+                updates
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Features Grid -->
+    <section class="advanced-features">
+      <div class="container">
+        <h2 class="section-title">Advanced Capabilities</h2>
+        <div class="advanced-features-grid">
+          <div class="advanced-card">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git Integration</h3>
+            <span class="feature-badge">Git</span>
+            <p>
+              Seamlessly manage branches, commits, and merges. Collaborate with
+              your team using built-in Git tools and workflows.
+            </p>
+          </div>
+          <div class="advanced-card">
+            <i class="fas fa-video"></i>
+            <h3>Session Recording</h3>
+            <span class="feature-badge">Recording</span>
+            <p>
+              Record your coding sessions for playback, review, or sharing.
+              Perfect for tutorials, onboarding, and retrospectives.
+            </p>
+          </div>
+          <div class="advanced-card">
+            <i class="fas fa-check-double"></i>
+            <h3>Code Reviews</h3>
+            <span class="feature-badge">Reviews</span>
+            <p>
+              Request, perform, and track code reviews. Leave comments,
+              suggestions, and approvals directly in the IDE.
+            </p>
+          </div>
+          <div class="advanced-card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Project Templates</h3>
+            <span class="feature-badge">Templates</span>
+            <p>
+              Start new projects quickly with ready-to-use templates for popular
+              stacks and frameworks. Save your own templates, too.
+            </p>
+          </div>
+          <div class="advanced-card">
+            <i class="fas fa-plug"></i>
+            <h3>Plugin Support</h3>
+            <span class="feature-badge">Plugins</span>
+            <p>
+              Extend CodeNest with custom plugins and integrations. Add new
+              tools, themes, and automations to fit your workflow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Sign Up & Create Workspace</h3>
+            <p>Start your project or join a team instantly.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Invite & Collaborate</h3>
+            <p>Share your workspace and code together in real time.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Build & Deploy</h3>
+            <p>Use AI, Git, and templates to build and launch projects.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Review & Learn</h3>
+            <p>Record sessions, review code, and grow as a team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+      <div class="container">
+        <h2 class="section-title">Perfect For</h2>
+        <div class="use-cases-row">
+          <div class="use-case-card">
+            <i class="fas fa-users-cog"></i>
+            <h3>Team Coding</h3>
+            <span class="feature-badge">Team</span>
+            <p>
+              Collaborate on any project, from anywhere. CodeNest keeps your
+              team in sync with real-time editing, chat, and version control.
+            </p>
+          </div>
+          <div class="use-case-card">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Teaching</h3>
+            <span class="feature-badge">Teaching</span>
+            <p>
+              Teach and mentor with live code, instant feedback, and
+              collaborative problem-solving. Perfect for classrooms and
+              workshops.
+            </p>
+          </div>
+          <div class="use-case-card">
+            <i class="fas fa-trophy"></i>
+            <h3>Hackathons</h3>
+            <span class="feature-badge">Hackathons</span>
+            <p>
+              Build, test, and deploy projects fast. CodeNest's collaboration
+              and AI tools help you win hackathons and coding competitions.
+            </p>
+          </div>
+          <div class="use-case-card">
+            <i class="fas fa-user-check"></i>
+            <h3>Code Reviews</h3>
+            <span class="feature-badge">Reviews</span>
+            <p>
+              Review, comment, and improve code quality together. Track changes,
+              discuss solutions, and ship better code as a team.
+            </p>
+          </div>
+          <div class="use-case-card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Learning</h3>
+            <span class="feature-badge">Learning</span>
+            <p>
+              Experiment, learn, and get instant feedback from AI and peers.
+              CodeNest is the perfect sandbox for growth and discovery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Developers Say</h2>
+        <div class="testimonials-row">
+          <div class="testimonial-card">
+            <span class="feature-badge">Testimonial</span>
+            <p>
+              "CodeNest is the best collaborative IDE I've ever used. The AI
+              assistant is a game changer!"
+            </p>
+            <div class="testimonial-user">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="User"
+              />
+              <span>Alex, Senior Developer</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <span class="feature-badge">Testimonial</span>
+            <p>
+              "I can teach, code, and review with my team from anywhere.
+              CodeNest makes it effortless."
+            </p>
+            <div class="testimonial-user">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="User"
+              />
+              <span>Priya, Full Stack Engineer</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <span class="feature-badge">Testimonial</span>
+            <p>
+              "The real-time collaboration and built-in chat are perfect for
+              hackathons and remote work."
+            </p>
+            <div class="testimonial-user">
+              <img
+                src="https://randomuser.me/api/portraits/men/65.jpg"
+                alt="User"
+              />
+              <span>Sam, Product Manager</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section id="newsletter" class="newsletter">
+      <div class="container">
+        <h2 class="section-title">Stay in the Loop</h2>
+        <p class="newsletter-desc">
+          Get early access, product updates, and coding tips delivered to your
+          inbox.
+        </p>
+        <form class="newsletter-form" autocomplete="off">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i> Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>CodeNest</h4>
+            <p>Collaborate, code, and create—together in the cloud.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#">Docs</a>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 CodeNest. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
