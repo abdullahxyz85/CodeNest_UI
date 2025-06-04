@@ -49,16 +49,21 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+      entry.target.classList.add("visible", "fade-in-up");
       observer.unobserve(entry.target);
     }
   });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll("section").forEach((section) => {
-  observer.observe(section);
-});
+// Observe all sections and elements that should animate
+document
+  .querySelectorAll(
+    "section, .feature-card, .advanced-card, .step, .use-case-card, .team-card, .section-title, .section-description, .hero-content h1, .hero-desc, .hero-cta, .newsletter-desc, .newsletter-form"
+  )
+  .forEach((element) => {
+    element.classList.add("fade-in-up"); // Add initial class
+    observer.observe(element);
+  });
 
 // Add hover effect to pricing cards
 document.querySelectorAll(".pricing-card").forEach((card) => {

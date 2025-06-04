@@ -278,6 +278,8 @@ body {
   color: var(--theme-text-color);
   background: var(--theme-background);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -286,11 +288,20 @@ h3,
 h4 {
   font-family: "Inter", sans-serif;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 h2 {
   color: var(--theme-primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.8rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--theme-text-color);
 }
 
 .container {
@@ -387,18 +398,16 @@ h2 {
   padding-top: 7rem;
   padding-bottom: 3rem;
 }
-#hero-particles {
+
+.hero-particles {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  min-height: 350px;
+  top: 0;
+  left: 0;
   z-index: 1;
-  /* pointer-events: none; */
-  display: block !important;
-  opacity: 1 !important;
 }
+
 .hero-container {
   position: relative;
   z-index: 2;
@@ -632,6 +641,7 @@ h2 {
 .how-it-works {
   background: var(--theme-box-background);
   padding: 5rem 0 3rem 0;
+  text-align: center;
 }
 .steps {
   display: flex;
@@ -1136,8 +1146,8 @@ h2 {
   visibility: hidden;
   transform: translateY(10px);
   transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
-  max-height: 300px; /* Add max-height for scrolling */
-  overflow-y: auto; /* Add scrollbar when content overflows */
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .theme-dropdown.visible {
@@ -1295,59 +1305,69 @@ h2 {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-  gap: 2rem; /* Space between cards */
-  padding-bottom: 2rem; /* Space for pagination */
+  -webkit-overflow-scrolling: touch;
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 
 .projects-carousel::-webkit-scrollbar {
-  height: 8px; /* Height of the scrollbar */
+  height: 10px;
 }
 
 .projects-carousel::-webkit-scrollbar-track {
-  background: var(--theme-light-background); /* Track color */
+  background: var(--theme-light-background);
   border-radius: 10px;
 }
 
 .projects-carousel::-webkit-scrollbar-thumb {
-  background: var(--theme-primary-color); /* Thumb color */
+  background: var(--theme-primary-color);
   border-radius: 10px;
 }
 
 .projects-carousel::-webkit-scrollbar-thumb:hover {
-  background: var(--theme-secondary-color); /* Thumb color on hover */
+  background: var(--theme-secondary-color);
 }
 
 .project-card {
-  flex: 0 0 auto; /* Prevent cards from shrinking */
-  width: 300px; /* Card width */
+  flex: 0 0 320px;
+  width: 320px;
   background: var(--theme-box-background);
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid var(--theme-border-color);
   overflow: hidden;
-  scroll-snap-align: center; /* Snap cards to center when scrolling */
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card-background {
   position: relative;
   width: 100%;
-  height: 180px; /* Height of the background image area */
+  height: 180px;
   overflow: hidden;
+  background: linear-gradient(
+    to bottom right,
+    var(--theme-accent-light),
+    var(--theme-border-color)
+  );
 }
 
 .project-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the area without distorting the image */
+  object-fit: cover;
+  display: block;
 }
 
 .overlay {
@@ -1355,22 +1375,24 @@ h2 {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   padding: 1rem;
   color: #fff;
   text-align: left;
 }
 
 .overlay h3 {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   margin: 0;
   color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .card-content {
   padding: 1.5rem;
   text-align: left;
-  flex-grow: 1; /* Allow content to take up remaining space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -1380,34 +1402,37 @@ h2 {
   color: var(--theme-text-color);
   margin-bottom: 1rem;
   flex-grow: 1;
+  line-height: 1.6;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .tag {
   display: inline-block;
   background: var(--theme-accent-light);
   color: var(--theme-primary-color);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  padding: 0.3em 0.8em;
-  border-radius: 0.3rem;
+  padding: 0.4em 1em;
+  border-radius: 0.5rem;
+  white-space: nowrap;
 }
 
 .carousel-pagination {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
-  gap: 0.5rem;
+  margin-top: 2rem;
+  gap: 0.6rem;
 }
 
 .pagination-dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: var(--theme-border-color);
   border-radius: 50%;
   cursor: pointer;
@@ -1416,5 +1441,266 @@ h2 {
 
 .pagination-dot.active {
   background: var(--theme-primary-color);
-  transform: scale(1.2);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .projects-carousel {
+    gap: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .project-card {
+    flex: 0 0 280px;
+    width: 280px;
+  }
+
+  .overlay h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.3em 0.8em;
+  }
+
+  .carousel-pagination {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-carousel {
+    gap: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  .project-card {
+    flex: 0 0 250px;
+    width: 250px;
+  }
+
+  .overlay h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.2em 0.6em;
+  }
+}
+
+/* --- Animation Classes --- */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-up:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+
+.fade-in-up:nth-child(even) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up .feature-card,
+.fade-in-up .advanced-card,
+.fade-in-up .step,
+.fade-in-up .use-case-card,
+.fade-in-up .team-card {
+  transition-delay: 0.1s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(7) {
+  transition-delay: 0.7s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(8) {
+  transition-delay: 0.8s;
+}
+
+.fade-in-up .features-row .feature-card:nth-child(9) {
+  transition-delay: 0.9s;
+}
+
+.fade-in-up .advanced-features-grid .advanced-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up .advanced-features-grid .advanced-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.fade-in-up .advanced-features-grid .advanced-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.fade-in-up .advanced-features-grid .advanced-card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.fade-in-up .steps .step:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up .steps .step:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.fade-in-up .steps .step:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.fade-in-up .use-cases-row .use-case-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up .use-cases-row .use-case-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.fade-in-up .use-cases-row .use-case-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.fade-in-up .use-cases-row .use-case-card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.fade-in-up .team-row .team-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fade-in-up .team-row .team-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.fade-in-up .team-row .team-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Collaboration Showcase Section */
+.collaboration-showcase {
+  background: var(--theme-light-background);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.collaboration-showcase .section-description {
+  margin-bottom: 3rem;
+}
+
+.collaboration-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.collab-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--theme-box-background);
+  border-radius: 1rem;
+  box-shadow: var(--theme-shadow);
+  border: 1px solid var(--theme-border-color);
+  padding: 2.5rem;
+}
+
+.panel-graphic {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.panel-graphic img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.panel-content {
+  max-width: 600px;
+}
+
+.panel-content h3 {
+  font-size: 1.8rem;
+  color: var(--theme-primary-color);
+  margin-bottom: 1rem;
+}
+
+.panel-content p {
+  font-size: 1.1rem;
+  color: var(--theme-text-color);
+  line-height: 1.6;
+}
+
+/* Layout for larger screens: graphic and content side-by-side */
+@media (min-width: 900px) {
+  .collab-panel {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 4rem;
+    padding: 3rem;
+  }
+
+  .collab-panel:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .panel-graphic,
+  .panel-content {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .panel-graphic {
+    max-width: none;
+  }
 }
