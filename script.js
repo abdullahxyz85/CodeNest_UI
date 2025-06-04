@@ -195,62 +195,137 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to apply themes
-  function applyTheme(themeName) {
-    const root = document.documentElement;
-    let themePrefix = "";
+  // Handle clicks on profile buttons to open LinkedIn links
+  document.querySelectorAll(".profile-button").forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      const linkedinUrl = this.dataset.linkedinUrl;
+      if (linkedinUrl && linkedinUrl !== "#") {
+        window.open(linkedinUrl, "_blank");
+      } else if (linkedinUrl === "#") {
+        console.log("LinkedIn URL not set for this profile.");
+        // Optionally show a message to the user or handle placeholder links
+      }
+    });
+  });
 
-    if (themeName !== "auto") {
-      themePrefix = themeName + "-";
+  // --- Example Projects Carousel ---
+  const carousel = document.querySelector(".projects-carousel");
+  const paginationContainer = document.querySelector(".carousel-pagination");
+  const cards = carousel.querySelectorAll(".project-card");
+
+  if (!carousel || !paginationContainer || cards.length === 0) {
+    return; // Exit if elements are not found
+  }
+
+  // Create pagination dots
+  cards.forEach((_, index) => {
+    const dot = document.createElement("div");
+    dot.classList.add("pagination-dot");
+    if (index === 0) {
+      dot.classList.add("active");
     }
+    dot.addEventListener("click", () => {
+      carousel.scrollTo({
+        left: cards[index].offsetLeft,
+        behavior: "smooth",
+      });
+    });
+    paginationContainer.appendChild(dot);
+  });
 
-    // Define a map of standard variables to theme-specific variables
-    const themeVariables = [
-      "primary-color",
-      "secondary-color",
-      "accent-color",
-      "accent-light",
-      "text-color",
-      "light-text",
-      "background",
-      "light-background",
-      "box-background",
-      "border-color",
-      "shadow",
-      "hero-background",
-    ];
+  const paginationDots =
+    paginationContainer.querySelectorAll(".pagination-dot");
 
-    themeVariables.forEach((variable) => {
-      const cssVar = `--theme-${variable}`;
-      const themeVar = `--${themePrefix}${variable}`;
-      const value = getComputedStyle(root).getPropertyValue(themeVar).trim();
+  // Update active dot on scroll
+  carousel.addEventListener("scroll", () => {
+    let activeIndex = 0;
+    let minDistance = Infinity;
 
-      if (value) {
-        root.style.setProperty(cssVar, value);
-      } else if (themeName !== "auto") {
-        // Fallback to default variables if theme-specific variable is not found for a non-auto theme
-        const defaultVar = `--${variable}`;
-        const defaultValue = getComputedStyle(root)
-          .getPropertyValue(defaultVar)
-          .trim();
-        root.style.setProperty(cssVar, defaultValue);
-      } else {
-        // For 'auto' theme or if no specific theme value is found, revert to original default
-        root.style.removeProperty(cssVar); // Remove the --theme- variable to use the original one
+    cards.forEach((card, index) => {
+      const distance = Math.abs(carousel.scrollLeft - card.offsetLeft);
+      if (distance < minDistance) {
+        minDistance = distance;
+        activeIndex = index;
       }
     });
 
-    // Save selected theme to localStorage
-    localStorage.setItem("selectedTheme", themeName);
-  }
+    paginationDots.forEach((dot, index) => {
+      if (index === activeIndex) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  });
+});
 
-  // Apply saved theme on page load
-  const savedTheme = localStorage.getItem("selectedTheme");
-  // Check if savedTheme exists and is not null/undefined
-  if (savedTheme) {
-    applyTheme(savedTheme);
-  } else {
-    // Apply default theme (or auto) if no theme is saved
-    applyTheme("auto");
+// Handle click for the single profile button
+document.addEventListener("click", function (event) {
+  const profileButton = event.target.closest(".profile-button");
+  if (profileButton) {
+    const linkedinUrl = profileButton.getAttribute("data-linkedin-url");
+    if (linkedinUrl) {
+      window.open(linkedinUrl, "_blank");
+    }
   }
 });
+
+// Function to apply themes
+function applyTheme(themeName) {
+  const root = document.documentElement;
+  let themePrefix = "";
+
+  if (themeName !== "auto") {
+    themePrefix = themeName + "-";
+  }
+
+  // Define a map of standard variables to theme-specific variables
+  const themeVariables = [
+    "primary-color",
+    "secondary-color",
+    "accent-color",
+    "accent-light",
+    "text-color",
+    "light-text",
+    "background",
+    "light-background",
+    "box-background",
+    "border-color",
+    "shadow",
+    "hero-background",
+  ];
+
+  themeVariables.forEach((variable) => {
+    const cssVar = `--theme-${variable}`;
+    const themeVar = `--${themePrefix}${variable}`;
+    const value = getComputedStyle(root).getPropertyValue(themeVar).trim();
+
+    if (value) {
+      root.style.setProperty(cssVar, value);
+    } else if (themeName !== "auto") {
+      // Fallback to default variables if theme-specific variable is not found for a non-auto theme
+      const defaultVar = `--${variable}`;
+      const defaultValue = getComputedStyle(root)
+        .getPropertyValue(defaultVar)
+        .trim();
+      root.style.setProperty(cssVar, defaultValue);
+    } else {
+      // For 'auto' theme or if no specific theme value is found, revert to original default
+      root.style.removeProperty(cssVar); // Remove the --theme- variable to use the original one
+    }
+  });
+
+  // Save selected theme to localStorage
+  localStorage.setItem("selectedTheme", themeName);
+}
+
+// Apply saved theme on page load
+const savedTheme = localStorage.getItem("selectedTheme");
+// Check if savedTheme exists and is not null/undefined
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else {
+  // Apply default theme (or auto) if no theme is saved
+  applyTheme("auto");
+}
