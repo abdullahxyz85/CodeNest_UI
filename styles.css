@@ -1209,23 +1209,37 @@ p {
 
 /* Our Team Section */
 .our-team {
-  background: var(--theme-light-background);
-  padding: 5rem 0 3rem 0;
+  padding: 80px 0;
   text-align: center;
+  background-color: var(--theme-light-background);
 }
 
-.section-description {
-  font-size: 1.1rem;
-  color: var(--theme-light-text);
-  margin-top: -1.5rem;
-  margin-bottom: 3rem;
+.our-team .section-description {
+  margin-bottom: 60px;
+}
+
+.team-description {
+  color: #000000; /* Pure dark black color */
+}
+
+.team-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.team-card ul li {
+  color: #000000; /* Pure dark black for list items */
+  font-size: 0.95rem;
+  margin-bottom: 5px;
 }
 
 .team-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .team-card {
@@ -1702,5 +1716,47 @@ p {
 
   .panel-graphic {
     max-width: none;
+  }
+}
+
+/* Video Demo Section */
+.demo-video {
+  padding: 80px 0;
+  text-align: center;
+  background-color: var(--theme-light-background);
+}
+
+.video-container {
+  position: relative;
+  width: 80%; /* Adjust as needed */
+  max-width: 900px; /* Max width for the video */
+  margin: 0 auto;
+  padding-bottom: 45%; /* 16:9 aspect ratio (height / width * 100) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: var(--theme-shadow);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    width: 95%;
+    padding-bottom: 56.25%; /* Adjust for smaller screens, maybe 16:9 */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    width: 100%;
+    padding-bottom: 65%; /* Adjust for very small screens */
   }
 }

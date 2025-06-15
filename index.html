@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeNest – Cloud Collaborative IDE</title>
+    <title>Sync Code – Real-time Collaborative Code Editor</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -20,9 +20,9 @@
     <!-- Announcement Bar -->
     <div class="announcement-bar">
       <span
-        ><i class="fas fa-bolt"></i> New: AI Assistant now supports natural
-        language-to-code!
-        <a href="#" class="announcement-link">Learn More →</a></span
+        ><i class="fas fa-bolt"></i> Experience seamless real-time collaboration
+        with Sync Code!
+        <a href="#features" class="announcement-link">Learn More →</a></span
       >
     </div>
 
@@ -31,13 +31,19 @@
       <div class="container nav-container">
         <div class="logo">
           <i class="fas fa-code"></i>
-          <span>CodeNest</span>
+          <span>Sync Code</span>
         </div>
         <div class="nav-links">
           <a href="#" class="home-link">Home</a>
           <a href="#features">Features</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#use-cases">Use Cases</a>
+          <a
+            href="https://github.com/abdullahxyz85/Sync-Code-Collobrative-IDE"
+            class="cta-button github-button"
+            target="_blank"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
           <a href="#newsletter" class="cta-button">Get Started</a>
           <!-- Theme Icon -->
           <div class="theme-selector">
@@ -116,19 +122,34 @@
       <div class="container hero-container">
         <div class="hero-content">
           <h1>
-            Empower Your Team with <span class="highlight">CodeNest</span>
+            Empower Your Team with <span class="highlight">Sync Code</span>
           </h1>
           <p class="hero-desc">
-            Next-generation cloud IDE for real-time, AI-powered team coding.<br />
-            Edit together, chat, share, and build full-stack projects—right in
-            your browser.
+            A powerful and intuitive collaborative code editor designed to
+            empower developers and teams.<br />
+            Code together, debug together, and ship faster, together.
           </p>
           <a href="#" class="primary-button hero-cta"
-            ><i class="fas fa-rocket"></i> Get Started Now</a
+            ><i class="fas fa-rocket"></i> Start Coding Now</a
           >
         </div>
       </div>
     </header>
+
+    <!-- Demo Video Section -->
+    <section id="demo-video" class="demo-video">
+      <div class="container">
+        <h2 class="section-title">Watch Sync Code in Action</h2>
+        <div class="video-container">
+          <iframe
+            src="https://github.com/Mohitur669/Realtime-Collaborative-Code-Editor/assets/79283402/14c17cc7-d23a-4d39-8af3-ef9e9fa8ef45"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
 
     <!-- Features Section -->
     <section id="features" class="features">
@@ -138,137 +159,134 @@
           <div class="feature-card">
             <i class="fas fa-users"></i>
             <h3>Real-Time Collaboration</h3>
-            <p>Live code editing and instant sync for seamless teamwork.</p>
+            <p>Multiple users can join a room and edit code together.</p>
             <ul>
               <li>
                 <i class="fas fa-check-circle orange-check"></i> Live multi-user
                 editing
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Instant code
+                <i class="fas fa-check-circle orange-check"></i> Instant changes
                 sync
               </li>
             </ul>
           </div>
           <div class="feature-card">
-            <i class="fas fa-comments"></i>
-            <h3>Chat & Voice</h3>
-            <p>Integrated chat and voice for instant communication.</p>
+            <i class="fas fa-copy"></i>
+            <h3>Easy Room Sharing</h3>
+            <p>Share your coding room with a single click.</p>
             <ul>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Real-time chat
+                <i class="fas fa-check-circle orange-check"></i> Copy room ID to
+                clipboard
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Voice channels
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-link"></i>
-            <h3>Secure Sharing</h3>
-            <p>Share projects with secure, permission-based links.</p>
-            <ul>
-              <li>
-                <i class="fas fa-check-circle orange-check"></i>
-                Permission-based access
-              </li>
-              <li>
-                <i class="fas fa-check-circle orange-check"></i> Shareable
-                project links
+                <i class="fas fa-check-circle orange-check"></i> Quick room
+                joining
               </li>
             </ul>
           </div>
           <div class="feature-card">
             <i class="fas fa-code"></i>
-            <h3>Multi-Language</h3>
-            <p>Support for popular languages and easy framework switching.</p>
+            <h3>Syntax Highlighting</h3>
+            <p>Support for multiple programming languages.</p>
             <ul>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> JavaScript,
-                Python, Java, C++
+                <i class="fas fa-check-circle orange-check"></i> Multiple
+                language support
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Easy language
-                switching
+                <i class="fas fa-check-circle orange-check"></i> Enhanced code
+                readability
               </li>
             </ul>
           </div>
           <div class="feature-card">
-            <i class="fas fa-terminal"></i>
-            <h3>Shared Terminal</h3>
-            <p>Collaborate in a live terminal for debugging and deployment.</p>
+            <i class="fas fa-palette"></i>
+            <h3>Customizable Themes</h3>
+            <p>Choose your preferred theme for comfortable coding.</p>
             <ul>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Live terminal
-                sharing
+                <i class="fas fa-check-circle orange-check"></i> Multiple theme
+                options
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Team debugging
+                <i class="fas fa-check-circle orange-check"></i> Theme
+                persistence
               </li>
             </ul>
           </div>
           <div class="feature-card">
-            <i class="fas fa-folder-open"></i>
-            <h3>File Management</h3>
-            <p>Organize files with drag-and-drop and versioned history.</p>
+            <i class="fas fa-sign-out-alt"></i>
+            <h3>Flexible Access</h3>
+            <p>Join and leave rooms as needed.</p>
             <ul>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Drag-and-drop
-                upload
+                <i class="fas fa-check-circle orange-check"></i> Easy room
+                leaving
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> File version
-                history
+                <i class="fas fa-check-circle orange-check"></i> Rejoin anytime
               </li>
             </ul>
           </div>
           <div class="feature-card">
-            <i class="fas fa-edit"></i>
-            <h3>Monaco Editor</h3>
-            <p>
-              Powerful code editor with syntax highlighting and IntelliSense.
-            </p>
+            <i class="fas fa-user-plus"></i>
+            <h3>User Management</h3>
+            <p>Real-time user presence tracking.</p>
             <ul>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Syntax
-                highlighting
+                <i class="fas fa-check-circle orange-check"></i> Live user
+                updates
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> IntelliSense
+                <i class="fas fa-check-circle orange-check"></i> User activity
+                tracking
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-save"></i>
+            <h3>Preferences Storage</h3>
+            <p>Your settings are saved for next time.</p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Theme
+                persistence
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Language
+                preferences
+              </li>
+            </ul>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-road"></i>
+            <h3>Future Features</h3>
+            <p>Exciting features coming soon.</p>
+            <ul>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> Video & voice
+                chat
+              </li>
+              <li>
+                <i class="fas fa-check-circle orange-check"></i> File upload
                 support
               </li>
             </ul>
           </div>
           <div class="feature-card">
             <i class="fas fa-robot"></i>
-            <h3>AI Assistant</h3>
-            <p>
-              Intelligent autocompletion, debugging, and natural language
-              coding.
-            </p>
+            <h3>AI Assistant & Chat</h3>
+            <p>Get intelligent code suggestions and real-time chat support.</p>
             <ul>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Code
+                <i class="fas fa-check-circle orange-check"></i> Smart code
                 autocompletion
               </li>
               <li>
-                <i class="fas fa-check-circle orange-check"></i> Live code
-                explanations
-              </li>
-            </ul>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-bolt"></i>
-            <h3>Instant Preview</h3>
-            <p>See live updates of web apps and UI changes as you code.</p>
-            <ul>
-              <li>
-                <i class="fas fa-check-circle orange-check"></i> Live web
-                preview
-              </li>
-              <li>
-                <i class="fas fa-check-circle orange-check"></i> Instant UI
-                updates
+                <i class="fas fa-check-circle orange-check"></i> Instant chat
+                assistance
               </li>
             </ul>
           </div>
@@ -337,23 +355,29 @@
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Sign Up & Create Workspace</h3>
-            <p>Start your project or join a team instantly.</p>
+            <h3>Create a Room</h3>
+            <p>
+              Click on the 'create new room' button and enter a username of your
+              choice.
+            </p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <h3>Invite & Collaborate</h3>
-            <p>Share your workspace and code together in real time.</p>
+            <h3>Copy Room ID</h3>
+            <p>Copy the room ID by clicking on the 'Copy ROOM ID' button.</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <h3>Build & Deploy</h3>
-            <p>Use AI, Git, and templates to build and launch projects.</p>
+            <h3>Join as Another User</h3>
+            <p>
+              Open another browser/browser-window or an incognito tab and go to
+              http://localhost:3000.
+            </p>
           </div>
           <div class="step">
             <div class="step-number">4</div>
-            <h3>Review & Learn</h3>
-            <p>Record sessions, review code, and grow as a team.</p>
+            <h3>Enter Room ID</h3>
+            <p>Enter the same room ID to join the collaborative session.</p>
           </div>
         </div>
       </div>
@@ -416,16 +440,18 @@
     <!-- Our Team Section -->
     <section id="our-team" class="our-team">
       <div class="container">
-        <h2 class="section-title">Our Team</h2>
-        <p class="section-description">
-          Meet the talented individuals behind CodeNest
+        <h2 class="section-title">Meet Our Team</h2>
+        <p class="section-description team-description">
+          Our dedicated team of innovators:
         </p>
         <div class="team-row">
           <!-- Team Member 1 -->
           <div class="team-card">
             <img src="Daniil.jpg" alt="" class="team-photo" />
             <h3>Daniil Butyrin</h3>
-            <p>Computer Science</p>
+            <ul>
+              <li>Computer Science</li>
+            </ul>
             <a
               href="#"
               class="profile-button"
@@ -437,7 +463,9 @@
           <div class="team-card">
             <img src="Khabab.png" alt="" class="team-photo" />
             <h3>Khabab Akhtar</h3>
-            <p>AI Engineer</p>
+            <ul>
+              <li>AI Engineer</li>
+            </ul>
             <a
               href="#"
               class="profile-button"
@@ -447,9 +475,11 @@
           </div>
           <!-- Team Member 3 -->
           <div class="team-card">
-            <img src="image3.png" alt="" class="team-photo" />
+            <img src="png.png" alt="" class="team-photo" />
             <h3>Abdullah Jameel</h3>
-            <p>Software Engineer</p>
+            <ul>
+              <li>Software Engineer</li>
+            </ul>
             <a
               href="#"
               class="profile-button"
@@ -461,7 +491,37 @@
           <div class="team-card">
             <img src="sofia.jpg" alt="" class="team-photo" />
             <h3>Sofiya Dassayeva</h3>
-            <p>Computer Science</p>
+            <ul>
+              <li>Computer Science</li>
+            </ul>
+            <a
+              href="#"
+              class="profile-button"
+              data-linkedin-url="https://lablab.ai/u/@dlotsss"
+              ><i class="fas fa-external-link-alt"></i> Profile</a
+            >
+          </div>
+          <!-- Team Member 5 -->
+          <div class="team-card">
+            <img src="Haniya.jpg" alt="" class="team-photo" />
+            <h3>Haniya Khan</h3>
+            <ul>
+              <li>Data Science</li>
+            </ul>
+            <a
+              href="#"
+              class="profile-button"
+              data-linkedin-url="https://lablab.ai/u/@dlotsss"
+              ><i class="fas fa-external-link-alt"></i> Profile</a
+            >
+          </div>
+          <!-- Team Member 6 -->
+          <div class="team-card">
+            <img src="arfa.jpg" alt="" class="team-photo" />
+            <h3>Arfa</h3>
+            <ul>
+              <li>ML Engineer</li>
+            </ul>
             <a
               href="#"
               class="profile-button"
@@ -495,7 +555,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h4>CodeNest</h4>
+            <h4>Sync Code</h4>
             <p>Collaborate, code, and create—together in the cloud.</p>
           </div>
           <div class="footer-section">
@@ -507,14 +567,18 @@
           <div class="footer-section">
             <h4>Connect</h4>
             <div class="social-links">
+              <a
+                href="https://github.com/abdullahxyz85/Sync-Code-Collobrative-IDE"
+                target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-github"></i></a>
               <a href="#"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 CodeNest. All rights reserved.</p>
+          <p>&copy; 2024 Sync Code. All rights reserved.</p>
         </div>
       </div>
     </footer>
